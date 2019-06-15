@@ -1,29 +1,10 @@
-# onboard
+# Onboard - name pending
 
-## Project setup
-```
-npm install
-```
+## What is Onboard
+Onboard is a platform for companies to display their training materials and onboard new hires. Onboard also has the ability to onboard customers, which businesses can utilize in a clean and uniform way.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Stack
+Vue.js
+Node.js
+Firebase
+Sendgrid
