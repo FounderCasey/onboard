@@ -1,23 +1,24 @@
-import Vue from 'vue'
-import firebase from "firebase"
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Login from './views/Login.vue'
-import SignUp from './views/SignUp.vue'
-import Dashboard from './views/Dashboard.vue'
+import Vue from "vue";
+import firebase from "firebase";
+import Router from "vue-router";
+import Home from "./views/Home.vue";
+import Login from "./views/Login.vue";
+import SignUp from "./views/SignUp.vue";
+import Dashboard from "./views/Dashboard.vue";
 
-Vue.use(Router)
+Vue.use(Router);
 
 const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  routes: [{
+  routes: [
+    {
       path: "*",
       redirect: "/"
     },
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       component: Home
     },
     {
@@ -37,7 +38,7 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
-    },
+    }
   ]
 });
 
@@ -46,7 +47,7 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next("login");
-  else if (!requiresAuth && currentUser) next("dashboard");
+  //else if (!requiresAuth && currentUser) next("dashboard");
   else next();
 });
 

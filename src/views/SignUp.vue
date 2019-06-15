@@ -6,7 +6,7 @@
       <br>
       <input placeholder="Password" v-model="password" type="password">
       <br>
-      <button @click="signup">Sign Up</button>
+      <button @click="signUp">Sign Up</button>
       <br>
       <p>
         Already have an account?
@@ -27,8 +27,8 @@ export default {
       password: ""
     };
   },
-  mehtods: {
-    signup: function() {
+  methods: {
+    signUp: function() {
       console.log("In function");
       firebase
         .auth()
@@ -40,7 +40,7 @@ export default {
             console.log("Worked");
           },
           error => {
-            alert("There was an error: " + error);
+            alert("There was an error: " + error.message);
           }
         );
     }

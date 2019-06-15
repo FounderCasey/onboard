@@ -37,7 +37,7 @@ export default {
             this.$router.replace("dashboard");
           },
           error => {
-            alert("There was an error: " + error);
+            alert("There was an error: " + error.message);
           }
         );
     }
