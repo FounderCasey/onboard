@@ -41,10 +41,20 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: 2.75rem;
+  margin: 0;
+  text-align: center;
+}
+
 p {
   color: $p;
   font-size: 1.55rem;
   font-weight: 300;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .cta {
@@ -56,5 +66,9 @@ p {
   font-weight: 500;
   padding: 15px 30px;
   border-radius: 5px;
+}
+
+.center {
+  text-align: center;
 }
 </style>
