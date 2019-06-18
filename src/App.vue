@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <router-link to="/home">Home</router-link>
-    <router-link to="/login">Login</router-link>
-    <router-link to="/signup">Sign Up</router-link>
-    <router-link to="/dashboard">Dashboard</router-link>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: $font;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
