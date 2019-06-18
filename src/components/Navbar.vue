@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div>
     <nav class="navbar">
       <router-link to="welcome" class="logo">
         <img src="../assets/updocslogo.svg">
@@ -19,7 +19,7 @@
         </li>
       </ul>
     </nav>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -39,13 +39,17 @@ export default {
     max-width: 1198px;
     margin: auto;
     font-size: 1.2rem;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
   }
 
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     .nav-links {
       display: flex;
       list-style: none;
@@ -64,7 +68,7 @@ export default {
     .nav-item {
       a {
         display: inline-block;
-        padding: 10px 15px;
+        padding: 15px 15px;
         text-decoration: none;
         color: $p;
       }

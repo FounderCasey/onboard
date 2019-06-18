@@ -11,16 +11,50 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $h;
+  height: 100%;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #162137;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+
+section {
+  padding: 90px 0;
+  max-width: 1198px;
+  margin: auto;
+  text-align: left;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .flex-item {
+    width: 50%;
   }
+
+  .short {
+    width: 45%;
+  }
+}
+
+h1 {
+  font-size: 3.75rem;
+  margin: 0;
+}
+
+p {
+  color: $p;
+  font-size: 1.55rem;
+  font-weight: 300;
+}
+
+.cta {
+  background: $a;
+  border: none;
+  outline: none;
+  color: $w;
+  font-size: 1.55rem;
+  font-weight: 500;
+  padding: 15px 30px;
+  border-radius: 5px;
 }
 </style>
