@@ -47,6 +47,17 @@
         </p>
       </div>
     </section>
+    <section class="flexbox">
+      <div class="flex-item short">
+        <h2 id="left">Load your material in one place.</h2>
+        <p>
+          Ensure that your documentation and training materials
+          are always readily available and displayed
+          in an engaging way.
+        </p>
+      </div>
+      <img src="../assets/Waiting.svg" class="flex-item">
+    </section>
   </section>
 </template>
 
@@ -67,37 +78,33 @@ export default {
 }
 
 form {
-  /* This bit sets up the horizontal layout */
   display: flex;
   flex-direction: row;
   width: 75%;
   margin-top: 35px;
-
-  /* This bit draws the box around it */
   border-radius: 5px;
   box-shadow: 0 0 20px #0000002d;
-  /* I've used padding so you can see the edges of the elements. */
   padding: 10px;
-}
 
-input {
-  /* Tell the input to use all the available space */
-  flex-grow: 1;
-  /* And hide the input's outline, so the form looks like the outline */
-  border: none;
+  input {
+    /* Tell the input to use all the available space */
+    flex-grow: 1;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
 
-  font-size: 1.65rem;
-  padding: 10px 0;
-  text-indent: 10px;
-  color: $p;
-}
+    font-size: 1.65rem;
+    padding: 10px 0;
+    text-indent: 10px;
+    color: $p;
+  }
 
-input:focus {
-  outline: none;
-}
+  input:focus {
+    outline: none;
+  }
 
-#submit {
-  padding: 5px 10px;
+  #submit {
+    padding: 5px 10px;
+  }
 }
 
 #left {
