@@ -44,7 +44,6 @@ h1 {
 h2 {
   font-size: 2.75rem;
   margin: 0;
-  text-align: center;
 }
 
 p {

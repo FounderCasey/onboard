@@ -17,6 +17,7 @@
       <img src="../assets/guyatcomputer.svg" class="flex-item">
     </section>
     <section class="flexbox">
+      <p>UpDocs provides soultions for</p>
       <div class="flex-item short center">
         <img class="icon" src="../assets/TeamIcon.svg">
         <h2>Team Members</h2>
@@ -41,22 +42,36 @@
       <div class="flex-item short">
         <h2 id="left">Load your material in one place.</h2>
         <p>
-          Ensure that your documentation and training materials
-          are always readily available and displayed
-          in an engaging way.
+          UpDocs ensures that your learning materials are
+          always kept in a singular location, where your
+          team or users can utilize.
         </p>
       </div>
     </section>
     <section class="flexbox">
       <div class="flex-item short">
-        <h2 id="left">Load your material in one place.</h2>
+        <h2 class="left">Optimize your teams start up time.</h2>
         <p>
-          Ensure that your documentation and training materials
-          are always readily available and displayed
-          in an engaging way.
+          Onboarding can be a daunting task for both parties.
+          UpDocs empowers you to get your team or users up to
+          speed faster.
         </p>
       </div>
       <img src="../assets/Waiting.svg" class="flex-item">
+    </section>
+    <section class="flexbox">
+      <img src="../assets/waitlist.svg" class="flex-item">
+      <div class="flex-item short">
+        <h2 class="center">Stay tuned, join our waitlist.</h2>
+        <p class="center">
+          We are coming out soon, and our waitlisters will
+          be able to get the first look at UpDocs!
+        </p>
+        <form id="center" action>
+          <input type="email" placeholder="Email">
+          <button class="cta" id="submit">Stay Tuned</button>
+        </form>
+      </div>
     </section>
   </section>
 </template>
@@ -107,8 +122,13 @@ form {
   }
 }
 
-#left {
+.left {
   text-align: left;
+}
+
+#center {
+  margin: auto;
+  width: 90%;
 }
 </style>
 
