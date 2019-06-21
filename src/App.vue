@@ -16,10 +16,18 @@
 }
 
 section {
-  padding: 90px 0;
-  max-width: 1198px;
+  padding: 90px 30px;
+  max-width: 1200px;
   margin: auto;
-  text-align: left;
+  text-align: center;
+}
+
+.top {
+  padding-top: 0;
+}
+
+.nav-section {
+  padding: 0;
 }
 
 .flexbox {
@@ -69,5 +77,31 @@ button:hover {
 
 .center {
   text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 90px 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .flex-item {
+      width: 90%;
+    }
+
+    .short {
+      width: 90%;
+    }
+  }
+  .left {
+    text-align: center;
+  }
 }
 </style>

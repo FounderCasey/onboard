@@ -3,8 +3,8 @@
     <Navbar></Navbar>
     <section class="flexbox">
       <div class="flex-item">
-        <h1>Onboarding just got easier.</h1>
-        <p>
+        <h1 class="left">Onboarding just got easier.</h1>
+        <p class="left">
           Often times onboarding new hires and customers can be rather
           unorganized and leaving them feeling overwhelmed,
           especially with documents all over.
@@ -17,7 +17,6 @@
       <img src="../assets/guyatcomputer.svg" class="flex-item">
     </section>
     <section class="flexbox">
-      <p>UpDocs provides soultions for</p>
       <div class="flex-item short center">
         <img class="icon" src="../assets/TeamIcon.svg">
         <h2>Team Members</h2>
@@ -27,7 +26,7 @@
           onboarding materials.
         </p>
       </div>
-      <div class="flex-item center">
+      <div class="flex-item short center">
         <img class="icon" src="../assets/customericon.svg">
         <h2>Customers</h2>
         <p class="center">
@@ -48,6 +47,7 @@
         </p>
       </div>
     </section>
+    <img class="product" src="../assets/optimizeproduct.png">
     <section class="flexbox">
       <div class="flex-item short">
         <h2 class="left">Optimize your teams start up time.</h2>
@@ -59,6 +59,7 @@
       </div>
       <img src="../assets/Waiting.svg" class="flex-item">
     </section>
+    <img class="product" src="../assets/optimizeproduct.png">
     <section class="flexbox">
       <img src="../assets/waitlist.svg" class="flex-item">
       <div class="flex-item short">
@@ -69,7 +70,7 @@
         </p>
         <form id="center" action>
           <input type="email" placeholder="Email">
-          <button class="cta" id="submit">Stay Tuned</button>
+          <button class id="submit">Stay Tuned</button>
         </form>
       </div>
     </section>
@@ -95,18 +96,17 @@ export default {
 form {
   display: flex;
   flex-direction: row;
-  width: 75%;
+  width: 90%;
   margin-top: 35px;
   border-radius: 5px;
-  box-shadow: 0 0 20px #0000002d;
+  box-shadow: 0 0 10px #00000017;
   padding: 10px;
 
   input {
     /* Tell the input to use all the available space */
-    flex-grow: 1;
+    flex-grow: 2;
     /* And hide the input's outline, so the form looks like the outline */
     border: none;
-
     font-size: 1.65rem;
     padding: 10px 0;
     text-indent: 10px;
@@ -129,6 +129,48 @@ form {
 #center {
   margin: auto;
   width: 90%;
+}
+
+.product {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-bottom: 90px;
+}
+
+@media only screen and (max-width: 768px) {
+  .left {
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    margin-top: 35px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00000017;
+    padding: 10px;
+
+    input {
+      flex: 2;
+      border: none;
+      font-size: 1.65rem;
+      padding: 10px 0;
+      text-indent: 10px;
+      color: $p;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    #submit {
+      padding: 5px 5px;
+    }
+  }
 }
 </style>
 
