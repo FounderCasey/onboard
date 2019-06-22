@@ -91,7 +91,6 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
     .flex-item {
       width: 90%;
     }
@@ -112,6 +111,10 @@ button:hover {
   h2 {
     font-size: 1.75rem;
     margin: 0;
+  }
+
+  .flex-item {
+    margin: auto;
   }
 
   p {

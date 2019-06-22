@@ -115,6 +115,15 @@ nav {
 }
 
 @media only screen and (max-width: 768px) {
+  .nav-section {
+    padding: 0;
+
+    .logo {
+      display: inline-block;
+      padding-left: 00px;
+    }
+  }
+
   .nav-item {
     display: none;
   }
