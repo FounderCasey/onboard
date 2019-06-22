@@ -9,16 +9,17 @@
           <router-link to="/">Get Started</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/" href="#">Product</router-link>
+          <router-link to="/product">Product</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/" href="#">Sign Up</router-link>
+          <router-link to="/signup">Sign Up</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/" href="#" id="last-link">Login</router-link>
+          <router-link to="/login" id="last-link">Login</router-link>
         </li>
         <li class="hamburger nav-item">
-          <i @click="open = !open" class="fas fa-bars"></i>
+          <i @click="open = !open" v-if="!open" class="fas fa-bars"></i>
+          <i @click="open = !open" v-if="open" class="fas fa-times"></i>
         </li>
       </ul>
     </nav>
@@ -28,16 +29,13 @@
           <router-link to="/">Get Started</router-link>
         </li>
         <li class="mobile-item">
-          <router-link to="/">Product</router-link>
+          <router-link to="/product">Product</router-link>
         </li>
         <li class="mobile-item">
           <router-link to="/signup">Sign Up</router-link>
         </li>
         <li class="mobile-item">
           <router-link to="/login" id="last-link">Login</router-link>
-        </li>
-        <li class="hamburger mobile-item">
-          <i class="fas fa-bars"></i>
         </li>
       </ul>
     </div>
@@ -127,6 +125,8 @@ nav {
 
   .mobile-menu {
     display: flex;
+    justify-content: center;
+    padding: 0;
     .mobile-links {
       display: flex;
       flex-direction: column;
@@ -134,14 +134,23 @@ nav {
       text-decoration: none;
     }
 
+    ul {
+      padding: 0;
+    }
+
     .mobile-item {
       a,
       i {
         display: inline-block;
-        padding: 15px 15px;
         text-decoration: none;
         color: $p;
+        width: 100%;
+        padding: 15px 0;
       }
+    }
+
+    a:hover {
+      color: $a;
     }
   }
 }

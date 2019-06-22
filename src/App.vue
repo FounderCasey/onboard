@@ -81,8 +81,8 @@ button:hover {
 
 @media only screen and (max-width: 768px) {
   section {
-    padding: 90px 10px;
-    width: 100%;
+    padding: 25px 10px;
+    width: 90%;
     text-align: center;
   }
 
@@ -102,6 +102,22 @@ button:hover {
   }
   .left {
     text-align: center;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin: 0;
+  }
+
+  p {
+    color: $p;
+    font-size: 1.15rem;
+    font-weight: 300;
   }
 }
 </style>

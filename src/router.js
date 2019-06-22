@@ -5,14 +5,14 @@ import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import SignUp from "./views/SignUp.vue";
 import Dashboard from "./views/Dashboard.vue";
+import Product from "./views/Product.vue";
 
 Vue.use(Router);
 
 const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: "*",
       redirect: "/"
     },
@@ -30,6 +30,11 @@ const router = new Router({
       path: "/signup",
       name: "SignUp",
       component: SignUp
+    },
+    {
+      path: "/product",
+      name: "Product",
+      component: Product
     },
     {
       path: "/dashboard",

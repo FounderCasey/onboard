@@ -11,6 +11,7 @@
         </p>
         <form action>
           <input type="email" placeholder="Email">
+          <br>
           <button class="cta" id="submit">Stay Tuned</button>
         </form>
       </div>
@@ -68,9 +69,10 @@
           We are coming out soon, and our waitlisters will
           be able to get the first look at UpDocs!
         </p>
-        <form id="center" action>
+        <form id="center-form" action>
           <input type="email" placeholder="Email">
-          <button class id="submit">Stay Tuned</button>
+          <br>
+          <button class="cta" id="submit">Stay Tuned</button>
         </form>
       </div>
     </section>
@@ -79,7 +81,6 @@
 
 <script>
 import Navbar from "../components/Navbar";
-
 export default {
   name: "home",
   components: {
@@ -95,31 +96,29 @@ export default {
 
 form {
   display: flex;
-  flex-direction: row;
-  width: 90%;
-  margin-top: 35px;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+input {
+  border: none;
+  outline: none;
   border-radius: 5px;
-  box-shadow: 0 0 10px #00000017;
-  padding: 10px;
+  font-size: 1.65rem;
+  color: $p;
+  width: 75%;
+  text-indent: 10px;
+  padding: 15px 0;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.089);
+}
 
-  input {
-    /* Tell the input to use all the available space */
-    flex-grow: 2;
-    /* And hide the input's outline, so the form looks like the outline */
-    border: none;
-    font-size: 1.65rem;
-    padding: 10px 0;
-    text-indent: 10px;
-    color: $p;
-  }
+#submit {
+  width: 200px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.089);
+}
 
-  input:focus {
-    outline: none;
-  }
-
-  #submit {
-    padding: 5px 10px;
-  }
+#center-form {
+  align-items: center;
 }
 
 .left {
@@ -130,7 +129,6 @@ form {
   margin: auto;
   width: 90%;
 }
-
 .product {
   display: block;
   margin-left: auto;
@@ -138,39 +136,24 @@ form {
   width: 80%;
   padding-bottom: 90px;
 }
-
 @media only screen and (max-width: 768px) {
   .left {
     text-align: center;
   }
 
   form {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: auto;
-    margin-top: 35px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #00000017;
-    padding: 10px;
-
+    justify-content: center;
     input {
-      flex: 2;
-      border: none;
-      font-size: 1.65rem;
-      padding: 10px 0;
-      text-indent: 10px;
-      color: $p;
-    }
-
-    input:focus {
-      outline: none;
+      width: 100%;
     }
 
     #submit {
-      padding: 5px 5px;
+      width: 100%;
     }
+  }
+
+  img {
+    margin-bottom: 20px;
   }
 }
 </style>
-
