@@ -23,7 +23,7 @@
         <h2>Team Members</h2>
         <p class="center">
           Onboarding new hires can be tough, especially with an
-          abundance of documents. UpDocs creates a home for your
+          abundance of documents. Wayrise creates a home for your
           onboarding materials.
         </p>
       </div>
@@ -32,7 +32,7 @@
         <h2>Customers</h2>
         <p class="center">
           Ensuring that your product has ample knowledge available
-          is paramount. UpDocs ensures that your customers will
+          is paramount. Wayrise ensures that your customers will
           always have that information provided.
         </p>
       </div>
@@ -42,7 +42,7 @@
       <div class="flex-item short">
         <h2 id="left">Load your material in one place.</h2>
         <p>
-          UpDocs ensures that your learning materials are
+          Wayrise ensures that your learning materials are
           always kept in a singular location, where your
           team or users can utilize.
         </p>
@@ -54,7 +54,7 @@
         <h2 class="left">Optimize your teams start up time.</h2>
         <p>
           Onboarding can be a daunting task for both parties.
-          UpDocs empowers you to get your team or users up to
+          Wayrise empowers you to get your team or users up to
           speed faster.
         </p>
       </div>
@@ -67,7 +67,7 @@
         <h2 class="center">Stay tuned, join our waitlist.</h2>
         <p class="center">
           We are coming out soon, and our waitlisters will
-          be able to get the first look at UpDocs!
+          be able to get the first look at Wayrise!
         </p>
         <form id="center-form" action>
           <input type="email" placeholder="Email">

@@ -2,7 +2,7 @@
   <section class="nav-section">
     <nav class="navbar">
       <router-link to="welcome" class="logo">
-        <img src="../assets/updocslogo.svg">
+        <img src="../assets/wayriselogo.svg">
       </router-link>
       <ul class="nav-links">
         <li class="nav-item">
