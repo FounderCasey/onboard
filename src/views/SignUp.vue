@@ -6,7 +6,7 @@
       <input placeholder="Email" v-model="email" type="text">
       <input placeholder="Password" v-model="password" type="password">
       <br>
-      <button class="cta" @click="signup">Sign Up</button>
+      <button class="cta" @click="signUp">Sign Up</button>
       <p>
         Already have an account?
         <router-link to="/login">Login</router-link>
@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     signUp: function() {
-      console.log("In function");
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
@@ -37,7 +36,6 @@ export default {
           // eslint-disable-next-line
           user => {
             this.$router.replace("dashboard");
-            console.log("Worked");
           },
           error => {
             alert("There was an error: " + error.message);

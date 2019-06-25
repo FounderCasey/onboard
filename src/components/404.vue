@@ -1,7 +1,5 @@
 <template>
-  <div class="404">
-    <h1>{{ msg }}</h1>
-  </div>
+  <div class="404"></div>
 </template>
 
 <script>

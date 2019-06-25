@@ -6,7 +6,7 @@
       </router-link>
       <ul class="nav-links">
         <li class="nav-item">
-          <router-link to="/">Get Started</router-link>
+          <router-link to="/home">Get Started</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/product">Product</router-link>
@@ -26,7 +26,7 @@
     <div class="mobile-menu" v-if="open">
       <ul class="mobile-links">
         <li class="mobile-item">
-          <router-link to="/">Get Started</router-link>
+          <router-link to="/home">Get Started</router-link>
         </li>
         <li class="mobile-item">
           <router-link to="/product">Product</router-link>
