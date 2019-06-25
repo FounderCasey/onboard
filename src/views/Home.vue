@@ -100,21 +100,9 @@ form {
   flex-direction: column;
 }
 
-input {
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  font-size: 1.65rem;
-  color: $p;
-  width: 75%;
-  text-indent: 10px;
-  padding: 15px 0;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.089);
-}
-
 #submit {
   width: 200px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.089);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.089);
 }
 
 #center-form {
