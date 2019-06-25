@@ -8,9 +8,11 @@
         <li class="nav-item">
           <router-link to="/home">Get Started</router-link>
         </li>
+        <!--
         <li class="nav-item">
           <router-link to="/product">Product</router-link>
         </li>
+        -->
         <li class="nav-item">
           <router-link to="/signup">Sign Up</router-link>
         </li>

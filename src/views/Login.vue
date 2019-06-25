@@ -4,7 +4,7 @@
     <div class="flex-center">
       <h1>Login</h1>
       <input placeholder="Email" v-model="email" type="text">
-      <input placeholder="Password" v-model="password" type="password">
+      <input placeholder="Password" v-model="password" v-on:keyup.enter="login" type="password">
       <br>
       <button class="cta" @click="login">Login</button>
       <p>
@@ -58,7 +58,7 @@ input {
 }
 
 input:nth-of-type(1) {
-  margin-top: 40px;
+  margin-top: 30px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   border-bottom: none;
@@ -71,7 +71,7 @@ input:nth-of-type(2) {
 
 button {
   width: 175px;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 a {
