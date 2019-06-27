@@ -1,7 +1,7 @@
 <template>
-  <div id="add-material">
-    <h2>Add new material</h2>
-    <form v-on:submit.prevent="saveMaterial">
+  <div id="add-article">
+    <h2>Add new article</h2>
+    <form v-on:submit.prevent="saveArticle">
       <label>Title</label>
       <input type="text" v-model="blog.title" required>
       <label>Content</label>
@@ -18,7 +18,7 @@ import firebase from "firebase";
 import { db } from "../main";
 
 export default {
-  name: "addMaterial",
+  name: "addArticle",
   data() {
     return {
       blog: {
@@ -29,11 +29,11 @@ export default {
     };
   },
   methods: {
-    saveMaterial: function() {
+    saveArticle: function() {
       var user = firebase.auth().currentUser;
-      db.collection("users")
+      db.collection("companies")
         .doc(user.uid)
-        .collection("Docs")
+        .collection("docs")
         .add({
           title: this.blog.title,
           body: this.blog.body

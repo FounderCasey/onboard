@@ -73,7 +73,7 @@ export default {
   firestore() {
     var user = firebase.auth().currentUser;
     return {
-      user: db.collection("users").doc(user.uid)
+      user: db.collection("companies").doc(user.uid)
     };
   }
 };

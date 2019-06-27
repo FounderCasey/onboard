@@ -79,6 +79,14 @@ button:hover {
   text-align: center;
 }
 
+.article-p {
+  font-size: 1.3rem;
+}
+
+.article-h3 {
+  font-size: 1.5rem;
+}
+
 @media only screen and (max-width: 768px) {
   section {
     padding: 25px 10px;

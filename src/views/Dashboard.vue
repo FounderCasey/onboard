@@ -7,12 +7,18 @@
           <li v-for="item in docs">
             <p @click="selectDoc(item)">{{ item.title }}</p>
           </li>
+          <li>
+            <p @click="showAddArticle = !showAddArticle">Add New Article</p>
+          </li>
         </ul>
       </div>
       <div class="right">
-        <!-- <addMaterial></addMaterial> -->
+        <addArticle v-if="showAddArticle"></addArticle>
+        <DisplayArticles v-if="!showAddArticle"></DisplayArticles>
+        <!--
         <h3>{{selectedDoc.title}}</h3>
         <p>{{selectedDoc.body}}</p>
+        -->
       </div>
     </section>
   </section>
@@ -21,7 +27,8 @@
 <script>
 import firebase from "firebase";
 import Dashbar from "../components/Dashbar";
-import addMaterial from "../components/addMaterial";
+import addArticle from "../components/addArticle";
+import DisplayArticles from "../components/DisplayArticles";
 import { db } from "../main";
 
 export default {
@@ -29,7 +36,8 @@ export default {
   data() {
     return {
       docs: [],
-      selectedDoc: []
+      selectedDoc: [],
+      showAddArticle: false
     };
   },
   methods: {
@@ -39,15 +47,16 @@ export default {
   },
   components: {
     Dashbar,
-    addMaterial
+    addArticle,
+    DisplayArticles
   },
   firestore() {
     var user = firebase.auth().currentUser;
     return {
       docs: db
-        .collection("users")
+        .collection("companies")
         .doc(user.uid)
-        .collection("Docs")
+        .collection("docs")
     };
   }
 };
@@ -71,13 +80,5 @@ export default {
   width: 75%;
   padding: 0 40px;
   text-align: left;
-
-  p {
-    font-size: 1.3rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
 }
 </style>

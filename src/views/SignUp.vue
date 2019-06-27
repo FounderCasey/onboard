@@ -39,11 +39,20 @@ export default {
           // eslint-disable-next-line
           user => {
             let currentUser = firebase.auth().currentUser;
-            db.collection("users")
+            db.collection("companies")
               .doc(currentUser.uid)
               .set({
                 email: this.email,
                 company: this.company
+              })
+              .then(() => {
+                db.collection("companies")
+                  .doc(currentUser.uid)
+                  .collection("docs")
+                  .add({
+                    title: "Getting Started with Wayrise",
+                    body: "Test"
+                  });
               });
             this.$router.replace("dashboard");
           },
