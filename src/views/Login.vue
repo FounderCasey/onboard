@@ -53,8 +53,17 @@ export default {
 #login {
   height: 80vh;
 }
+
 input {
-  width: 375px;
+  border: 1px solid $a;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.65rem;
+  color: $p;
+  width: 370px;
+  text-indent: 10px;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.089);
 }
 
 input:nth-of-type(1) {

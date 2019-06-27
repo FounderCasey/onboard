@@ -100,6 +100,18 @@ form {
   flex-direction: column;
 }
 
+input {
+  border: 1px solid $a;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.65rem;
+  color: $p;
+  width: 75%;
+  text-indent: 10px;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.089);
+}
+
 #submit {
   width: 200px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.089);
@@ -117,13 +129,17 @@ form {
   margin: auto;
   width: 90%;
 }
+
 .product {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  padding-bottom: 90px;
+  margin-bottom: 90px;
+  border-radius: 5px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.089);
 }
+
 @media only screen and (max-width: 768px) {
   .left {
     text-align: center;

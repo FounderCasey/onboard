@@ -6,22 +6,19 @@
       </router-link>
       <ul class="nav-links">
         <li class="nav-item">
-          <router-link to="/home">Get Started</router-link>
-        </li>
-        <!--
-        <li class="nav-item">
-          <router-link to="/product">Product</router-link>
-        </li>
-        -->
-        <li class="nav-item">
-          <router-link to="/signup">Sign Up</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/login" id="last-link">
+          <router-link to="/home">
             <span>
               {{user.company}}
               <i class="fas fa-external-link-alt" id="export-i"></i>
             </span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/account">Account</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/" id="last-link">
+            <span @click="logout">Logout</span>
           </router-link>
         </li>
         <li class="hamburger nav-item">
@@ -33,19 +30,18 @@
     <div class="mobile-menu" v-if="open">
       <ul class="mobile-links">
         <li class="mobile-item">
-          <router-link to="/home">Get Started</router-link>
-        </li>
-        <li class="mobile-item">
-          <router-link to="/product">Product</router-link>
-        </li>
-        <li class="mobile-item">
-          <router-link to="/signup">Sign Up</router-link>
-        </li>
-        <li class="mobile-item">
-          <router-link to="/account" id="last-link">
-            {{user.company}}
-            <i class="fas fa-external-link-alt" id="export-i"></i>
+          <router-link to="/">
+            <span>
+              {{user.company}}
+              <i class="fas fa-external-link-alt" id="export-i"></i>
+            </span>
           </router-link>
+        </li>
+        <li class="mobile-item">
+          <router-link to="/account">Account</router-link>
+        </li>
+        <li class="mobile-item">
+          <router-link to="/" @click="logout" id="last-link">Logout</router-link>
         </li>
       </ul>
     </div>
@@ -63,6 +59,16 @@ export default {
       open: false,
       user: []
     };
+  },
+  methods: {
+    logout: function() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace("login");
+        });
+    }
   },
   firestore() {
     var user = firebase.auth().currentUser;
@@ -189,10 +195,26 @@ nav {
         width: 100%;
         padding: 15px 0;
       }
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      #export-i {
+        padding: 0 0 0 5px;
+        font-size: 0.7rem;
+      }
     }
 
     a:hover {
       color: $a;
+    }
+
+    .mobile-item:hover {
+      #export-i {
+        color: $a;
+      }
     }
   }
 }

@@ -1,0 +1,77 @@
+<template>
+  <div id="add-material">
+    <h2>Add new material</h2>
+    <form v-on:submit.prevent="saveMaterial">
+      <label>Title</label>
+      <input type="text" v-model="blog.title" required>
+      <label>Content</label>
+      <textarea name id cols="30" rows="10" v-model="blog.body"></textarea>
+      <br>
+      <input type="submit" class="cta">
+    </form>
+  </div>
+</template>
+
+
+<script>
+import firebase from "firebase";
+import { db } from "../main";
+
+export default {
+  name: "addMaterial",
+  data() {
+    return {
+      blog: {
+        title: "",
+        body: ""
+      },
+      user: []
+    };
+  },
+  methods: {
+    saveMaterial: function() {
+      var user = firebase.auth().currentUser;
+      db.collection("users")
+        .doc(user.uid)
+        .collection("Docs")
+        .add({
+          title: this.blog.title,
+          body: this.blog.body
+        });
+    }
+  },
+  firestore() {
+    var user = firebase.auth().currentUser;
+    return {
+      user: db.collection("users").doc(user.uid)
+    };
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+#add-material * {
+  box-sizing: border-box;
+}
+
+#add-material {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin: 20px 0 10px;
+}
+
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+}
+
+h3 {
+  margin-top: 10px;
+}
+</style>

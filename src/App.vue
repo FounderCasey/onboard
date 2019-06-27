@@ -64,18 +64,6 @@ button:hover {
   cursor: pointer;
 }
 
-input {
-  border: 1px solid $a;
-  outline: none;
-  border-radius: 5px;
-  font-size: 1.65rem;
-  color: $p;
-  width: 75%;
-  text-indent: 10px;
-  padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.089);
-}
-
 .cta {
   background: $a;
   border: none;
