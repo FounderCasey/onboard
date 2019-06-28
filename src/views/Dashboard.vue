@@ -138,7 +138,7 @@ export default {
 
     i:nth-of-type(1) {
       color: $a;
-      padding-left: 8px;
+      padding-left: 8pxno;
     }
 
     i:nth-of-type(2) {

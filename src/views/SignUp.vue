@@ -21,6 +21,13 @@ import firebase from "firebase";
 import Navbar from "../components/Navbar";
 import { db } from "../main";
 
+var wayriseTitle = "Getting Started with Wayrise";
+var wayriseBody = `This will be a quick introduction to get you started on the Wayrise platform. If you aren't already, click "Getting Started with Wayrise" on the left. 
+  
+Once here, this is where you can edit your text and title of each different article. 
+  
+The icons just below your text are there to save, cancel, and delete your articles. Once clicked, each icon will perform different actions. The save icon will save any changes made to this document while in edit mode, the cancel icon will disregard any changes and open the overview, and the trash icon will delete the current article in edit mode.`;
+
 export default {
   name: "SignUp",
   data() {
@@ -50,8 +57,8 @@ export default {
                   .doc(currentUser.uid)
                   .collection("docs")
                   .add({
-                    title: "Getting Started with Wayrise",
-                    body: "Test"
+                    title: wayriseTitle,
+                    body: wayriseBody
                   });
               });
             this.$router.replace("dashboard");
