@@ -18,15 +18,14 @@
         <addArticle v-if="selector == 2"></addArticle>
         <div v-if="selector == 3">
           <h3 class="article-h3">{{selectedDoc.title}}</h3>
-          <!-- <p class="article-p">{{selectedDoc.body}}</p> -->
-          <textarea-autosize
-            class="article-textarea"
-            placeholder="Type something here..."
-            ref="someName"
-            v-model="selectedDoc.body"
-          ></textarea-autosize>
-          <button class="cta" @click="update(selectedDoc)">Save</button>
-          <button class="cta cancel-btn" @click="selector = 1">Cancel</button>
+          <textarea-autosize class="article-textarea" v-model="selectedDoc.body"></textarea-autosize>
+          <div class="flexbox" id="button-flex">
+            <div>
+              <i class="fas fa-save" @click="update(selectedDoc)"></i>
+              <i class="fas fa-times-circle" @click="selector = 1"></i>
+            </div>
+            <i class="fas fa-trash-alt" @click="destroy(selectedDoc)"></i>
+          </div>
         </div>
       </div>
     </section>
@@ -39,7 +38,6 @@ import Dashbar from "../components/Dashbar";
 import addArticle from "../components/addArticle";
 import DisplayArticles from "../components/DisplayArticles";
 import { db } from "../main";
-import VueTextareaAutosize from "vue-textarea-autosize";
 
 export default {
   name: "Dashboard",
@@ -71,20 +69,22 @@ export default {
         });
     },
 
-    delete: function(item) {
+    destroy: function(item) {
       var user = firebase.auth().currentUser;
       db.collection("companies")
         .doc(user.uid)
         .collection("docs")
         .doc(item.id)
-        .delete();
+        .delete()
+        .then(() => {
+          this.selector = 1;
+        });
     }
   },
   components: {
     Dashbar,
     addArticle,
-    DisplayArticles,
-    VueTextareaAutosize
+    DisplayArticles
   },
   firestore() {
     var user = firebase.auth().currentUser;
@@ -126,6 +126,29 @@ export default {
 
   h3 {
     margin-top: 10px;
+  }
+
+  #button-flex {
+    justify-content: space-between;
+
+    i {
+      padding: 15px 15px;
+      font-size: 1.4rem;
+    }
+
+    i:nth-of-type(1) {
+      color: $a;
+      padding-left: 8px;
+    }
+
+    i:nth-of-type(2) {
+      color: rgb(248, 66, 66);
+    }
+
+    i:nth-of-type(3) {
+      color: rgb(168, 168, 168);
+      align-self: flex-end;
+    }
   }
 }
 

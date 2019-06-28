@@ -65,8 +65,8 @@ button:hover {
 }
 
 .cta {
+  border: none;
   background: $a;
-  border: solid 1px $a;
   outline: none;
   color: $w;
   font-size: 1.55rem;
@@ -76,9 +76,14 @@ button:hover {
 }
 
 .cancel-btn {
-  border: solid 1px rgb(255, 31, 31);
   color: rgb(255, 31, 31);
   background: transparent;
+  margin-left: 20px;
+}
+
+.delete-btn {
+  color: $w;
+  background: rgb(255, 31, 31);
   margin-left: 20px;
 }
 

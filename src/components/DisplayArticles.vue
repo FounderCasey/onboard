@@ -11,7 +11,6 @@
 <script>
 import firebase from "firebase";
 import { db } from "../main";
-import VueTextareaAutosize from "vue-textarea-autosize";
 
 export default {
   name: "DisplayArticles",
@@ -53,8 +52,7 @@ export default {
         .doc(user.uid)
         .collection("docs")
     };
-  },
-  components: { VueTextareaAutosize }
+  }
 };
 </script>
 
