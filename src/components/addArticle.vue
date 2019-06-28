@@ -45,7 +45,8 @@ export default {
     return {
       user: db.collection("users").doc(user.uid)
     };
-  }
+  },
+  components: {}
 };
 </script>
 

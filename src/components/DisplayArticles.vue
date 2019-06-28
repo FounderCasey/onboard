@@ -1,18 +1,8 @@
 <template>
   <div id="display-articles">
     <article class="flex-article" v-for="(article, index) in docs" :key="index">
-      <h3 class="article-h3">
-        {{ article.title }} -
-        <span class="edit-span" @click="edit = !edit">Edit</span>
-      </h3>
-      <p class="article-p">{{ article.body }}</p>
-      <div v-if="edit">
-        <input type="text" v-model="article.title">
-        <br>
-        <textarea v-model="article.body" name id cols="30" rows="10"></textarea>
-        <br>
-        <button class="cta" @click="update(article)">Save</button>
-      </div>
+      <h3 class="article-h3">{{ article.title }}</h3>
+      <textarea-autosize readonly class="article-textarea" v-model="article.body"></textarea-autosize>
     </article>
   </div>
 </template>
@@ -21,6 +11,7 @@
 <script>
 import firebase from "firebase";
 import { db } from "../main";
+import VueTextareaAutosize from "vue-textarea-autosize";
 
 export default {
   name: "DisplayArticles",
@@ -62,7 +53,8 @@ export default {
         .doc(user.uid)
         .collection("docs")
     };
-  }
+  },
+  components: { VueTextareaAutosize }
 };
 </script>
 
@@ -87,25 +79,6 @@ label {
     justify-content: flex-start;
     align-items: center;
   }
-}
-
-input[type="text"],
-textarea {
-  display: block;
-  width: 100%;
-  padding: 8px;
-}
-
-.edit-span {
-  font-size: 1rem;
-  align-self: center;
-  font-weight: 500;
-  padding-left: 7px;
-  color: $a;
-}
-
-.edit-span:hover {
-  cursor: pointer;
 }
 
 input[type="text"],

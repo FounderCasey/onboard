@@ -5,10 +5,12 @@ import firebase from "firebase";
 import {
   firestorePlugin
 } from 'vuefire'
+import VueTextareaAutosize from 'vue-textarea-autosize'
 
 Vue.config.productionTip = false;
 
 Vue.use(firestorePlugin);
+Vue.use(VueTextareaAutosize)
 
 let app = "";
 
