@@ -3,9 +3,16 @@
     <Navbar></Navbar>
     <div class="flex-center">
       <h1>Sign Up</h1>
-      <input placeholder="Email" v-model="email" type="email">
-      <input placeholder="Company" v-model="company" type="text">
-      <input placeholder="Password" v-model="password" v-on:keyup.enter="signUp" type="password">
+      <input placeholder="Email" v-model="email" type="email" required>
+      <input placeholder="Company" v-model="company" type="text" required>
+      <input placeholder="Company Link" v-model="link" type="text">
+      <input
+        placeholder="Password"
+        v-model="password"
+        v-on:keyup.enter="signUp"
+        type="password"
+        required
+      >
       <br>
       <button class="cta" @click="signUp">Sign Up</button>
       <p>
@@ -34,7 +41,8 @@ export default {
     return {
       email: "",
       password: "",
-      company: ""
+      company: "",
+      link: ""
     };
   },
   methods: {
@@ -92,14 +100,15 @@ input {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.089);
 }
 
-input:nth-of-type(1) {
+input:first-of-type {
   margin-top: 30px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   border-bottom: none;
 }
 
-input:nth-of-type(2) {
+input:nth-of-type(2),
+input:nth-of-type(3) {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0;
@@ -107,7 +116,7 @@ input:nth-of-type(2) {
   border-bottom: none;
 }
 
-input:nth-of-type(3) {
+input:last-of-type {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }

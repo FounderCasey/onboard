@@ -6,12 +6,12 @@
       </router-link>
       <ul class="nav-links">
         <li class="nav-item">
-          <router-link to="/home">
+          <a :href="user.link">
             <span>
               {{user.company}}
               <i class="fas fa-external-link-alt" id="export-i"></i>
             </span>
-          </router-link>
+          </a>
         </li>
         <li class="nav-item">
           <router-link to="/account">Account</router-link>
