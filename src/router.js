@@ -6,6 +6,7 @@ import Login from "./views/Login.vue";
 import SignUp from "./views/SignUp.vue";
 import Dashboard from "./views/Dashboard.vue";
 import Product from "./views/Product.vue";
+import Docs from "./views/Docs.vue";
 
 Vue.use(Router);
 
@@ -40,6 +41,15 @@ const router = new Router({
       path: "/dashboard",
       name: "Dashboard",
       component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/:name",
+      name: "Docs",
+      props: true,
+      component: Docs,
       meta: {
         requiresAuth: true
       }
