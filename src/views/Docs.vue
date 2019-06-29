@@ -26,7 +26,7 @@ export default {
       this.companies.forEach(element => {
         console.log(name);
         if (element.company == this.name) {
-          console.log("Matching element" + this.company.id);
+          console.log("Matching element");
         }
       });
     }
