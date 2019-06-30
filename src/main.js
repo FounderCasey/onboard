@@ -10,7 +10,7 @@ import VueTextareaAutosize from 'vue-textarea-autosize'
 Vue.config.productionTip = false;
 
 Vue.use(firestorePlugin);
-Vue.use(VueTextareaAutosize)
+Vue.use(VueTextareaAutosize);
 
 let app = "";
 
