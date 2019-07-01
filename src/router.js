@@ -52,6 +52,20 @@ const router = new Router({
       component: Docs,
       meta: {
         requiresAuth: true
+      },
+      beforeEnter: (to, from, next) => {
+        function isValid(param) {
+          // check if param is valid
+          let resolved = this.$router.resolve('YOUR URL')
+        }
+
+        if (!isValid(to.params.Docs)) {
+          next({
+            name: 'Dashboard'
+          });
+        }
+
+        next();
       }
     }
   ]
