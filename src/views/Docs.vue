@@ -9,24 +9,26 @@
 
 <script>
 import { db } from "../main";
+import { firestore } from "firebase";
 
 export default {
   name: "Docs",
   data() {
     return {
       articles: [],
-      company: []
+      company: [],
+      companies: []
     };
   },
   props: ["name"],
-  methods: {},
+  created() {
+    console.log(this.companies);
+  },
   firestore() {
     return {
+      //company: db.collection("companies")
       company: db.collection("companies").doc(this.name),
-      articles: db
-        .collection("companies")
-        .doc(this.name)
-        .collection("docs")
+      articles: db.collection("companies").doc(this.name).collection("docs")
     };
   }
 };
