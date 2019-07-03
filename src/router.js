@@ -5,8 +5,9 @@ import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
 import SignUp from "./views/SignUp.vue";
 import Dashboard from "./views/Dashboard.vue";
-import Product from "./views/Product.vue";
 import Docs from "./views/Docs.vue";
+import NotFound from "./views/NotFound.vue";
+import axios from 'axios';
 
 Vue.use(Router);
 
@@ -33,9 +34,12 @@ const router = new Router({
       component: SignUp
     },
     {
-      path: "/product",
-      name: "Product",
-      component: Product
+      path: "/notfound",
+      name: "NotFound",
+      component: NotFound,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: "/dashboard",
@@ -54,18 +58,15 @@ const router = new Router({
         requiresAuth: true
       },
       beforeEnter: (to, from, next) => {
-        function isValid(param) {
-          // check if param is valid
-          let resolved = this.$router.resolve('YOUR URL')
-        }
 
-        if (!isValid(to.params.Docs)) {
-          next({
-            name: 'Dashboard'
-          });
-        }
-
-        next();
+        var paramName = to.params.name;
+        axios
+          .get('https://firestore.googleapis.com/v1/projects/onboard-cw/databases/(default)/documents/companies/' + paramName)
+          .then(response => next())
+          .catch(function (error) {
+            // handle error
+            next("notfound")
+          })
       }
     }
   ]
