@@ -3,17 +3,17 @@
     <Navbar></Navbar>
     <div class="flex-center">
       <h1>Sign Up</h1>
-      <input placeholder="Email" v-model="email" type="email" required>
-      <input placeholder="Company" v-model="company" type="text" required>
-      <input placeholder="Company Link" v-model="link" type="text">
+      <input placeholder="Email" v-model="email" type="email" required />
+      <input placeholder="Company" v-model="company" type="text" required />
+      <input placeholder="Company Link" v-model="link" type="text" />
       <input
         placeholder="Password"
         v-model="password"
         v-on:keyup.enter="signUp"
         type="password"
         required
-      >
-      <br>
+      />
+      <br />
       <button class="cta" @click="signUp">Sign Up</button>
       <p>
         Already have an account?
@@ -90,6 +90,7 @@ export default {
 
 input {
   border: 1px solid $a;
+  background: #e8f0fe;
   outline: none;
   border-radius: 5px;
   font-size: 1.65rem;

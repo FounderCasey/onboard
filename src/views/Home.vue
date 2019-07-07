@@ -10,16 +10,16 @@
           especially with documents all over.
         </p>
         <form action>
-          <input type="email" placeholder="Email">
-          <br>
+          <input type="email" placeholder="Email" />
+          <br />
           <button class="cta" id="submit">Stay Tuned</button>
         </form>
       </div>
-      <img src="../assets/guyatcomputer.svg" class="flex-item">
+      <img src="../assets/guyatcomputer.svg" class="flex-item" />
     </section>
     <section class="flexbox">
       <div class="flex-item short center">
-        <img class="icon" src="../assets/TeamIcon.svg">
+        <img class="icon" src="../assets/TeamIcon.svg" />
         <h2>Team Members</h2>
         <p class="center">
           Onboarding new hires can be tough, especially with an
@@ -28,7 +28,7 @@
         </p>
       </div>
       <div class="flex-item short center">
-        <img class="icon" src="../assets/customericon.svg">
+        <img class="icon" src="../assets/customericon.svg" />
         <h2>Customers</h2>
         <p class="center">
           Ensuring that your product has ample knowledge available
@@ -38,7 +38,7 @@
       </div>
     </section>
     <section class="flexbox">
-      <img src="../assets/truck.svg" class="flex-item">
+      <img src="../assets/truck.svg" class="flex-item" />
       <div class="flex-item short">
         <h2 id="left">Load your material in one place.</h2>
         <p>
@@ -48,7 +48,7 @@
         </p>
       </div>
     </section>
-    <img class="product" src="../assets/optimizeproduct.png">
+    <img class="product" src="../assets/optimizeproduct.png" />
     <section class="flexbox">
       <div class="flex-item short">
         <h2 class="left">Optimize your teams start up time.</h2>
@@ -58,11 +58,11 @@
           speed faster.
         </p>
       </div>
-      <img src="../assets/Waiting.svg" class="flex-item">
+      <img src="../assets/Waiting.svg" class="flex-item" />
     </section>
-    <img class="product" src="../assets/optimizeproduct.png">
+    <img class="product" src="../assets/optimizeproduct.png" />
     <section class="flexbox">
-      <img src="../assets/waitlist.svg" class="flex-item">
+      <img src="../assets/waitlist.svg" class="flex-item" />
       <div class="flex-item short">
         <h2 class="center">Stay tuned, join our waitlist.</h2>
         <p class="center">
@@ -70,8 +70,8 @@
           be able to get the first look at Wayrise!
         </p>
         <form id="center-form" action>
-          <input type="email" placeholder="Email">
-          <br>
+          <input type="email" placeholder="Email" />
+          <br />
           <button class="cta" id="submit">Stay Tuned</button>
         </form>
       </div>
@@ -102,6 +102,7 @@ form {
 
 input {
   border: 1px solid $a;
+  background: #e8f0fe;
   outline: none;
   border-radius: 5px;
   font-size: 1.65rem;

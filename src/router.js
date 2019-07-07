@@ -6,6 +6,7 @@ import Login from "./views/Login.vue";
 import SignUp from "./views/SignUp.vue";
 import Dashboard from "./views/Dashboard.vue";
 import Docs from "./views/Docs.vue";
+import Account from "./views/Account.vue";
 import NotFound from "./views/NotFound.vue";
 import axios from 'axios';
 
@@ -26,7 +27,13 @@ const router = new Router({
     {
       path: "/login",
       name: "Login",
-      component: Login
+      component: Login,
+      beforeEnter(to, from, next) {
+        const currentUser = firebase.auth().currentUser;
+
+        if (currentUser) next("dashboard");
+        else next();
+      }
     },
     {
       path: "/signup",
@@ -45,6 +52,14 @@ const router = new Router({
       path: "/dashboard",
       name: "Dashboard",
       component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/account",
+      name: "Account",
+      component: Account,
       meta: {
         requiresAuth: true
       }
@@ -77,7 +92,7 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next("login");
-  else if (!requiresAuth && currentUser) next("dashboard");
+  //else if (!requiresAuth && currentUser) next("dashboard");
   else next();
 });
 

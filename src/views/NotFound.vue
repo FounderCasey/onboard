@@ -5,6 +5,7 @@
 
 <script>
 export default {
-  name: "NotFound"
+  name: "NotFound",
+  components: {}
 };
 </script>

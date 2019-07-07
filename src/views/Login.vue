@@ -3,9 +3,9 @@
     <Navbar></Navbar>
     <div class="flex-center">
       <h1>Login</h1>
-      <input placeholder="Email" v-model="email" type="text">
-      <input placeholder="Password" v-model="password" v-on:keyup.enter="login" type="password">
-      <br>
+      <input placeholder="Email" v-model="email" type="text" />
+      <input placeholder="Password" v-model="password" v-on:keyup.enter="login" type="password" />
+      <br />
       <button class="cta" @click="login">Login</button>
       <p>
         Don't have an account?
@@ -56,6 +56,7 @@ export default {
 
 input {
   border: 1px solid $a;
+  background: #e8f0fe;
   outline: none;
   border-radius: 5px;
   font-size: 1.65rem;
