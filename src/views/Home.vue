@@ -20,7 +20,7 @@
     <section class="flexbox">
       <div class="flex-item short center">
         <img class="icon" src="../assets/TeamIcon.svg" />
-        <h2>Team Members</h2>
+        <h2 class="center">Team Members</h2>
         <p class="center">
           Onboarding new hires can be tough, especially with an
           abundance of documents. Wayrise creates a home for your
@@ -29,7 +29,7 @@
       </div>
       <div class="flex-item short center">
         <img class="icon" src="../assets/customericon.svg" />
-        <h2>Customers</h2>
+        <h2 class="center">Customers</h2>
         <p class="center">
           Ensuring that your product has ample knowledge available
           is paramount. Wayrise ensures that your customers will
@@ -40,8 +40,8 @@
     <section class="flexbox">
       <img src="../assets/truck.svg" class="flex-item" />
       <div class="flex-item short">
-        <h2 id="left">Load your material in one place.</h2>
-        <p>
+        <h2 class="center">Load your material in one place.</h2>
+        <p class="center">
           Wayrise ensures that your learning materials are
           always kept in a singular location, where your
           team or users can utilize.
@@ -51,7 +51,7 @@
     <img class="product" src="../assets/optimizeproduct.png" />
     <section class="flexbox">
       <div class="flex-item short">
-        <h2 class="left">Optimize your teams start up time.</h2>
+        <h2 class="center">Optimize your teams start up time.</h2>
         <p>
           Onboarding can be a daunting task for both parties.
           Wayrise empowers you to get your team or users up to
@@ -124,6 +124,10 @@ input {
 
 .left {
   text-align: left;
+}
+
+.center {
+  text-align: center;
 }
 
 #center {
