@@ -22,7 +22,7 @@ exports.firestoreEmail = functions.firestore
     const data = event.data();
 
     const msg = {
-      to: 'casey@dashwebdesign.com',
+      to: data.email,
       from: 'caseywilcox@outlook.com',
       subject: 'Wayrise Confirmation',
       templateId: 'd-28c47223e7fc4045b4dd3abd5c99d653'
