@@ -9,8 +9,8 @@
           unorganized and leaving them feeling overwhelmed,
           especially with documents all over.
         </p>
-        <form action>
-          <input type="email" placeholder="Email" />
+        <form @submit.prevent="subscribe">
+          <input type="email" placeholder="Email" v-model="email" />
           <br />
           <button class="cta" id="submit">Stay Tuned</button>
         </form>
@@ -69,8 +69,8 @@
           We are coming out soon, and our waitlisters will
           be able to get the first look at Wayrise!
         </p>
-        <form id="center-form" action>
-          <input type="email" placeholder="Email" />
+        <form id="center-form" @submit.prevent="subscribe">
+          <input type="email" placeholder="Email" v-model="email" />
           <br />
           <button class="cta" id="submit">Stay Tuned</button>
         </form>
@@ -81,10 +81,25 @@
 
 <script>
 import Navbar from "../components/Navbar";
+import firebase from "firebase";
+import { db } from "../main";
+
 export default {
   name: "home",
+  data() {
+    return {
+      email: ""
+    };
+  },
   components: {
     Navbar: Navbar
+  },
+  methods: {
+    subscribe: function() {
+      db.collection("emails").add({
+        email: this.email
+      });
+    }
   }
 };
 </script>
