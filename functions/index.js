@@ -15,7 +15,7 @@ const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey(SENDGRID_API_KEY);
 
-exports.firestoreEmail = functions.firestore
+exports.subscribeEmail = functions.firestore
   .document('emails/{id}')
   .onCreate(event => {
 
